@@ -1,11 +1,11 @@
-About riskfolio-lib
-===================
+About riskfolio-lib-feedstock
+=============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/riskfolio-lib-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/dcajasn/Riskfolio-Lib
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/riskfolio-lib-feedstock/blob/main/LICENSE.txt)
 
 Summary: Portfolio Optimization and Quantitative Strategic Asset Allocation in Python
 
