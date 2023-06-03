@@ -1,5 +1,5 @@
 {% set name = "Riskfolio-Lib" %}
-{% set version = "3.3.0" %}
+{% set version = "4.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 29d0ff046952304ee8362d914551d82cdb2aa663728a6b1df80365c589a626b4
+  sha256: 917473353dbda00aaf8d4451d69593801a94ee68c52cc01d1aff80b828be1970
 
 build:
   number: 0
