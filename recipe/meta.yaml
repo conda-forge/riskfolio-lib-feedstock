@@ -22,7 +22,7 @@ requirements:
     - python >=3.7
     - pip
     - numpy
-    - pybind
+    - pybind11
     - scipy
     - setuptools
     - wheel
