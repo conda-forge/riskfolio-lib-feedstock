@@ -31,6 +31,7 @@ requirements:
     - setuptools
     - wheel
     - armadillo
+    - carma
   run:
     - python >=3.7
     - arch-py >=4.15
