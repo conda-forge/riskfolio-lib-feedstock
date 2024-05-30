@@ -1,25 +1,14 @@
-diff -ruN Riskfolio-Lib-4.1.0.orig/riskfolio/external/matrix_functions.cpp Riskfolio-Lib-4.1.0/riskfolio/external/matrix_functions.cpp
---- Riskfolio-Lib-4.1.0.orig/riskfolio/external/matrix_functions.cpp	2023-03-18 03:41:14.000000000 +0100
-+++ Riskfolio-Lib-4.1.0/riskfolio/external/matrix_functions.cpp	2024-05-23 14:56:42.013781463 +0200
-@@ -6,7 +6,7 @@
-  */
- 
- #include <iostream>
--#include <carma>
-+#include <carma/carma>
- #include <armadillo>
- #include <pybind11/numpy.h>
- #include <pybind11/pybind11.h>
 diff -ruN Riskfolio-Lib-4.1.0.orig/setup.py Riskfolio-Lib-4.1.0/setup.py
 --- Riskfolio-Lib-4.1.0.orig/setup.py	2023-03-26 08:29:47.000000000 +0200
-+++ Riskfolio-Lib-4.1.0/setup.py	2024-05-22 14:39:46.016414393 +0200
-@@ -88,24 +88,16 @@
++++ Riskfolio-Lib-4.1.0/setup.py	2024-05-30 10:19:11.910258866 +0200
+@@ -88,24 +88,17 @@
          numpy_include = np.get_numpy_include()
  
      WIN = sys.platform.startswith("win32")
 -    armadillo_path = os.path.abspath(os.path.join('.', 'lib', 'armadillo-11.4.1', 'include'))
 -    carma_path = os.path.abspath(os.path.join('.', 'lib', 'carma-0.6.6', 'include'))
 -    lpack_path = os.path.abspath(os.path.join('.', 'lib', 'armadillo-11.4.1', 'lib_win64'))
++    carma_include = os.path.abspath(os.path.join(os.environ["PREFIX"], "include", "carma"))
      external_path = os.path.abspath(os.path.join('.', 'riskfolio', 'external'))
  
 -    if WIN:
@@ -37,7 +26,7 @@ diff -ruN Riskfolio-Lib-4.1.0.orig/setup.py Riskfolio-Lib-4.1.0/setup.py
 -            )
 +    kwargs = {
 +        "sources": [os.path.join('riskfolio', 'external', 'cpp_functions_bindings.cpp')],
-+        "include_dirs": [numpy_include, external_path],
++        "include_dirs": [numpy_include, carma_include, external_path],
 +        "define_macros": [('VERSION_INFO', VERSION)],
 +    }
 +    if not WIN:
