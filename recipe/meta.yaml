@@ -9,7 +9,7 @@ source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 239614153dc429904d98033f71b30cf708c1c2244ad359b6ece135f02023f5a8
   patches:
-    - devendor_armadillo.patch
+    - devendor-armadillo-carma.patch
 
 build:
   number: 0
