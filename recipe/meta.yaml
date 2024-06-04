@@ -1,5 +1,5 @@
 {% set name = "Riskfolio-Lib" %}
-{% set version = "3.3.0" %}
+{% set version = "4.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,9 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 29d0ff046952304ee8362d914551d82cdb2aa663728a6b1df80365c589a626b4
+  sha256: 239614153dc429904d98033f71b30cf708c1c2244ad359b6ece135f02023f5a8
+  patches:
+    - devendor-armadillo-carma.patch
 
 build:
   number: 0
@@ -16,9 +18,20 @@ build:
     - {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ stdlib("c") }}
+    - {{ compiler('cxx') }}  
   host:
     - python >=3.7
     - pip
+    - numpy
+    - pybind11 >=2.10.1
+    - scipy
+    - setuptools
+    - wheel
+    - armadillo
+    - carma
   run:
     - python >=3.7
     - arch-py >=4.15
@@ -59,3 +72,4 @@ about:
 extra:
   recipe-maintainers:
     - timkpaine
+    - zklaus

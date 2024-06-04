@@ -1,0 +1,37 @@
+diff -ruN Riskfolio-Lib-4.1.0.orig/setup.py Riskfolio-Lib-4.1.0/setup.py
+--- Riskfolio-Lib-4.1.0.orig/setup.py	2023-03-26 08:29:47.000000000 +0200
++++ Riskfolio-Lib-4.1.0/setup.py	2024-05-30 10:19:11.910258866 +0200
+@@ -88,24 +88,17 @@
+         numpy_include = np.get_numpy_include()
+ 
+     WIN = sys.platform.startswith("win32")
+-    armadillo_path = os.path.abspath(os.path.join('.', 'lib', 'armadillo-11.4.1', 'include'))
+-    carma_path = os.path.abspath(os.path.join('.', 'lib', 'carma-0.6.6', 'include'))
+-    lpack_path = os.path.abspath(os.path.join('.', 'lib', 'armadillo-11.4.1', 'lib_win64'))
++    carma_include = os.path.abspath(os.path.join(os.environ["PREFIX"], "include", "carma"))
+     external_path = os.path.abspath(os.path.join('.', 'riskfolio', 'external'))
+ 
+-    if WIN:
+-        external_module = Pybind11Extension('riskfolio.external.functions',
+-            sources=[os.path.join('riskfolio', 'external', 'cpp_functions_bindings.cpp')],
+-            include_dirs = [numpy_include, armadillo_path, carma_path, external_path],
+-            define_macros = [('VERSION_INFO', VERSION)],
+-            )
+-    else:
+-        external_module = Pybind11Extension('riskfolio.external.functions',
+-            sources=[os.path.join('riskfolio', 'external', 'cpp_functions_bindings.cpp')],
+-            include_dirs = [numpy_include, armadillo_path, carma_path, external_path],
+-            extra_compile_args = ['-DARMA_DONT_USE_WRAPPER'],
+-            define_macros = [('VERSION_INFO', VERSION)],
+-            )
++    kwargs = {
++        "sources": [os.path.join('riskfolio', 'external', 'cpp_functions_bindings.cpp')],
++        "include_dirs": [numpy_include, carma_include, external_path],
++        "define_macros": [('VERSION_INFO', VERSION)],
++    }
++    if not WIN:
++        kwargs["extra_compile_args"] = ['-DARMA_DONT_USE_WRAPPER']
++    external_module = Pybind11Extension('riskfolio.external.functions', **kwargs)
+ 
+     setup(
+         name=DISTNAME,
