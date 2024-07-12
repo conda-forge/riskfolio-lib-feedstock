@@ -10,7 +10,7 @@ index 75c20bf..e9d0660 100644
 -    eigen_core_path = os.path.abspath(os.path.join('.', 'lib', 'eigen-3.4.0'))
 -    eigen_unsupported_path = os.path.abspath(os.path.join('.', 'lib', 'eigen-3.4.0', 'unsupported'))
 -    spectra_path = os.path.abspath(os.path.join('.', 'lib', 'spectra-1.0.1', 'include'))
-+    eigen_path = os.path.abspath(os.path.join(os.environ["PREFIX"], "include", "eigen", "Eigen"))
++    eigen_path = os.path.abspath(os.path.join(os.environ["PREFIX"], "include", "eigen"))
 +    eigen_core_path = os.path.abspath(os.path.join(os.environ["PREFIX"], "include", "eigen", "Eigen"))
 +    eigen_unsupported_path = os.path.abspath(os.path.join(os.environ["PREFIX"], "include", "eigen", "unsupported"))
 +    spectra_path = os.path.abspath(os.path.join(os.environ["PREFIX"], "include", "spectra"))
