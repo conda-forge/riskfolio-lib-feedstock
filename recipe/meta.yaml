@@ -15,7 +15,6 @@ build:
   number: 0
   noarch: python
   script:
-    - find $PREFIX/include
     - {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
