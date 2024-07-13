@@ -15,11 +15,65 @@ Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table>
+    
+  <tr>
+    <td>Azure</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17032&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/riskfolio-lib-feedstock?branchName=main">
-      </a>
+      <details>
+        <summary>
+          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17032&branchName=main">
+            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/riskfolio-lib-feedstock?branchName=main">
+          </a>
+        </summary>
+        <table>
+          <thead><tr><th>Variant</th><th>Status</th></tr></thead>
+          <tbody><tr>
+              <td>linux_64_numpy1.22</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17032&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/riskfolio-lib-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_numpy1.22" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_numpy2.0</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17032&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/riskfolio-lib-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_numpy2.0" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_numpy1.22</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17032&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/riskfolio-lib-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_numpy1.22" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_numpy2.0</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17032&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/riskfolio-lib-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_numpy2.0" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_numpy1.22</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17032&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/riskfolio-lib-feedstock?branchName=main&jobName=win&configuration=win%20win_64_numpy1.22" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_numpy2.0</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17032&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/riskfolio-lib-feedstock?branchName=main&jobName=win&configuration=win%20win_64_numpy2.0" alt="variant">
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
     </td>
   </tr>
 </table>
@@ -148,7 +202,4 @@ Feedstock Maintainers
 
 * [@timkpaine](https://github.com/timkpaine/)
 * [@zklaus](https://github.com/zklaus/)
-
-
-<!-- dummy commit to enable rerendering -->
 
