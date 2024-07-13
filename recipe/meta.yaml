@@ -12,18 +12,22 @@ source:
     - devendor-armadillo-carma.patch
 
 build:
-  number: 1
-  noarch: python
+  number: 2
+  skip: true  # [win]
   script:
     - {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
+    - pybind11                               # [build_platform != target_platform and not win]
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}  
   host:
-    - python >=3.7
+    - python
     - pip
     - numpy
     - pybind11 >=2.10.1
@@ -33,7 +37,7 @@ requirements:
     - armadillo
     - carma
   run:
-    - python >=3.7
+    - python
     - arch-py >=4.15
     - astropy >=4.3.1
     - cvxpy >=1.0.25
