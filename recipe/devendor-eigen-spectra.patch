@@ -1,0 +1,45 @@
+diff --git a/setup.py b/setup.py
+index 75c20bf..e9d0660 100644
+--- a/setup.py
++++ b/setup.py
+@@ -93,28 +93,19 @@ if __name__ == "__main__":
+         numpy_include = np.get_numpy_include()
+ 
+     WIN = sys.platform.startswith("win32")
+-    eigen_path = os.path.abspath(os.path.join('.', 'lib', 'eigen-3.4.0', 'Eigen'))
+-    eigen_core_path = os.path.abspath(os.path.join('.', 'lib', 'eigen-3.4.0'))
+-    eigen_unsupported_path = os.path.abspath(os.path.join('.', 'lib', 'eigen-3.4.0', 'unsupported'))
+-    spectra_path = os.path.abspath(os.path.join('.', 'lib', 'spectra-1.0.1', 'include'))
++    eigen_path = os.path.abspath(os.path.join(os.environ["PREFIX"], "include", "eigen3"))
++    eigen_core_path = os.path.abspath(os.path.join(os.environ["PREFIX"], "include", "eigen3", "Eigen"))
++    eigen_unsupported_path = os.path.abspath(os.path.join(os.environ["PREFIX"], "include", "eigen3", "unsupported"))
++    spectra_path = os.path.abspath(os.path.join(os.environ["PREFIX"], "include", "spectra"))
+     external_path = os.path.abspath(os.path.join('.', 'riskfolio', 'external'))
+ 
+     sources = [os.path.join('riskfolio', 'external', 'cpp_functions_bindings.cpp')]
+-    if WIN:
+-        external_module = Pybind11Extension('riskfolio.external.functions',
+-            sources=sources,
+-            include_dirs = [numpy_include, eigen_path, eigen_core_path, eigen_unsupported_path, spectra_path,external_path,external_path],
+-            extra_compile_args = ['-O2', '-Ofast', '-msse2'],
+-            define_macros = [('VERSION_INFO', VERSION)],
+-            )
+-    else:
+-        external_module = Pybind11Extension('riskfolio.external.functions',
+-            sources=sources,
+-            include_dirs = [numpy_include, eigen_path, eigen_core_path, eigen_unsupported_path, spectra_path, external_path,external_path],
+-            extra_compile_args = ['-O2', '-Ofast'],
+-            define_macros = [('VERSION_INFO', VERSION)],
+-            )
+-
++    kwargs = {
++        "sources": sources,
++        "include_dirs": [numpy_include, eigen_path, eigen_core_path, eigen_unsupported_path, spectra_path, external_path],
++        "define_macros": [('VERSION_INFO', VERSION)],
++    }
++    external_module = Pybind11Extension('riskfolio.external.functions', **kwargs)
+     setup(
+         name=DISTNAME,
+         author=MAINTAINER,
+-- 
+2.44.0
