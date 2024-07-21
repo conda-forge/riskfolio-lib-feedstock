@@ -33,20 +33,20 @@ requirements:
   host:
     - python
     - pip
-    - numpy
+    - numpy >=1.24
     - pybind11 >=2.10.1
-    - scipy >=1.1.0
+    - scipy >=1.10.0
     - setuptools >=68.1.0
     - wheel
     - eigen
     - spectra-cpp
   run:
     - python
-    - arch-py >=5.4
+    - arch-py >=7
     - astropy >=5.1
     - clarabel >=0.6.0
-    - cvxpy >=1.4.0
-    - matplotlib-base >=3.7.0
+    - cvxpy >=1.5.2
+    - matplotlib-base >=3.8.0
     - networkx >=3.0
     - numpy >=1.24.0
     - pandas >=2.0.0
