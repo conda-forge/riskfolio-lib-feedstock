@@ -1,5 +1,5 @@
 {% set name = "Riskfolio-Lib" %}
-{% set version = "6.2.1" %}
+{% set version = "6.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: cffd6fa1a364d991857feba0d6e7bf7d76417c502d5db7b6975ca051eb1fa181
+  sha256: f4986fde4d6bae73118620faa03ef86b00855f2a08cdc0773afdfd356f0265d6
   patches:
     - devendor-eigen-spectra.patch
 
@@ -33,20 +33,20 @@ requirements:
   host:
     - python
     - pip
-    - numpy
+    - numpy >=1.24
     - pybind11 >=2.10.1
-    - scipy >=1.1.0
+    - scipy >=1.10.0
     - setuptools >=68.1.0
     - wheel
     - eigen
     - spectra-cpp
   run:
     - python
-    - arch-py >=5.4
+    - arch-py >=7
     - astropy >=5.1
     - clarabel >=0.6.0
-    - cvxpy >=1.4.0
-    - matplotlib-base >=3.7.0
+    - cvxpy >=1.5.2
+    - matplotlib-base >=3.8.0
     - networkx >=3.0
     - numpy >=1.24.0
     - pandas >=2.0.0
