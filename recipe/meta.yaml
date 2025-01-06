@@ -6,13 +6,13 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: f4986fde4d6bae73118620faa03ef86b00855f2a08cdc0773afdfd356f0265d6
   patches:
     - devendor-eigen-spectra.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win or py<39]
   script:
     - {{ PYTHON }} -m pip install . --no-deps -vv
