@@ -27,7 +27,7 @@ requirements:
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
-    - python {{ python_min }}
+    - python
     - pip
     - numpy >=1.24
     - pybind11 >=2.10.1
@@ -37,7 +37,7 @@ requirements:
     - eigen
     - spectra-cpp
   run:
-    - python >={{ python_min }}
+    - python
     - arch-py >=7
     - astropy-base >=5.1
     - clarabel >=0.6.0
@@ -53,7 +53,7 @@ requirements:
 
 test:
   requires:
-    - python {{ python_min }}
+    - python
   imports:
     - riskfolio
 
