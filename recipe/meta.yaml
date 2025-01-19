@@ -27,7 +27,7 @@ requirements:
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
-    - python
+    - python {{ python_min }}
     - pip
     - numpy >=1.24
     - pybind11 >=2.10.1
@@ -37,7 +37,7 @@ requirements:
     - eigen
     - spectra-cpp
   run:
-    - python
+    - python >={{ python_min }}
     - arch-py >=7
     - astropy-base >=5.1
     - clarabel >=0.6.0
@@ -52,19 +52,10 @@ requirements:
     - xlsxwriter >=3.1.2
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - riskfolio
-
-outputs:
-  - name: {{ name|lower }}
-  - name: riskfolio_lib
-    build:
-      noarch: python
-    requirements:
-      host:
-        - python
-      run:
-        - {{ pin_subpackage( name|lower , exact=True) }}
 
 about:
   home: https://github.com/dcajasn/Riskfolio-Lib
