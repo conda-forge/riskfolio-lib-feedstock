@@ -126,7 +126,6 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-riskfolio--lib-green.svg)](https://anaconda.org/conda-forge/riskfolio-lib) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/riskfolio-lib.svg)](https://anaconda.org/conda-forge/riskfolio-lib) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/riskfolio-lib.svg)](https://anaconda.org/conda-forge/riskfolio-lib) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/riskfolio-lib.svg)](https://anaconda.org/conda-forge/riskfolio-lib) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-riskfolio_lib-green.svg)](https://anaconda.org/conda-forge/riskfolio_lib) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/riskfolio_lib.svg)](https://anaconda.org/conda-forge/riskfolio_lib) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/riskfolio_lib.svg)](https://anaconda.org/conda-forge/riskfolio_lib) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/riskfolio_lib.svg)](https://anaconda.org/conda-forge/riskfolio_lib) |
 
 Installing riskfolio-lib
 ========================
@@ -138,16 +137,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `riskfolio-lib, riskfolio_lib` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `riskfolio-lib` can be installed with `conda`:
 
 ```
-conda install riskfolio-lib riskfolio_lib
+conda install riskfolio-lib
 ```
 
 or with `mamba`:
 
 ```
-mamba install riskfolio-lib riskfolio_lib
+mamba install riskfolio-lib
 ```
 
 It is possible to list all of the versions of `riskfolio-lib` available on your platform with `conda`:
