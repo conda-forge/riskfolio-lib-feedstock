@@ -1,5 +1,5 @@
 {% set name = "Riskfolio-Lib" %}
-{% set version = "7.2.1" %}
+{% set version = "7.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') | lower }}-{{ version }}.tar.gz
-  sha256: 3cbef173b53a26ca5b8177b6eb81c4e4cac9adc726d0a4b5ce74614013c1b9f7
+  sha256: 73ab9400691e0ca4258ba1b3d4939018c67809955504807b0559904405246bdf
   patches:
     - devendor-eigen-spectra.patch
 
