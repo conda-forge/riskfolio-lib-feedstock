@@ -31,7 +31,8 @@ requirements:
     - pip
     - numpy >=1.26.4
     - pybind11 >=2.13.6
-    - scipy >=1.16.1
+    - scipy >=1.16.1  # [py>310]
+    - scipy  # [py<311]
     - setuptools >=68.1.0
     - wheel
     - eigen
