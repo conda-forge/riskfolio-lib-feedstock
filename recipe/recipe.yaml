@@ -71,9 +71,6 @@ tests:
       imports:
         - riskfolio
       pip_check: false
-  - requirements:
-      run:
-        - python
 
 about:
   license: BSD-3-Clause
