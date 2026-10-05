@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: Riskfolio-Lib
-  version: "7.3.0"
+  version: "7.4.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,12 +10,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') | lower }}-${{ version }}.tar.gz
-  sha256: 73ab9400691e0ca4258ba1b3d4939018c67809955504807b0559904405246bdf
+  sha256: b02ca9d34e7e96b49e1b2a1c2bd4557894ab5f4376e4730f3bc610c6d65a806a
   patches:
     - devendor-eigen-spectra.patch
 
 build:
-  number: 1
+  number: 0
   skip: win or match(python, "<3.9")
   script:
     - ${{ PYTHON }} -m pip install . --no-deps -vv
@@ -23,13 +23,11 @@ build:
 requirements:
   build:
     - if: build_platform != target_platform
-      then: python
-    - if: build_platform != target_platform
-      then: cross-python_${{ target_platform }}
-    - if: build_platform != target_platform
-      then: numpy >=1.26.4
-    - if: build_platform != target_platform
-      then: pybind11
+      then:
+        - python
+        - cross-python_${{ target_platform }}
+        - numpy >=1.26.4
+        - pybind11
     - ${{ compiler('c') }}
     - ${{ stdlib("c") }}
     - ${{ compiler('cxx') }}
