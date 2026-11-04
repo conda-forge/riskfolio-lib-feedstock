@@ -37,10 +37,7 @@ requirements:
     - pip
     - numpy >=1.26.4
     - pybind11 >=3.1.0
-    - if: match(python, ">3.10")
-      then: scipy >=1.16.1
-    - if: match(python, "<3.11")
-      then: scipy
+    - scipy >=1.13.1
     - setuptools >=84.0.0
     - wheel
     - eigen
@@ -56,10 +53,7 @@ requirements:
     - pandas >=2.2.2
     - pybind11 >=3.1.0
     - scikit-learn >=1.7.0
-    - if: match(python, ">3.10")
-      then: scipy >=1.16.1
-    - if: match(python, "<3.11")
-      then: scipy
+    - scipy >=1.16.1
     - scs >=3.2.7
     - statsmodels >=0.14.5
     - vectorbt >=0.28.0
@@ -69,7 +63,7 @@ tests:
   - python:
       imports:
         - riskfolio
-      pip_check: false
+      pip_check: true
 
 about:
   license: BSD-3-Clause
