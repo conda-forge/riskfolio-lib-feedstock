@@ -15,7 +15,7 @@ source:
     - devendor-eigen.patch
 
 build:
-  number: 0
+  number: 1
   # VectorBT has no osx-arm64 builds for Python <3.12.
   skip: win or match(python, "<3.10") or (osx and arm64 and match(python, "<3.12"))
   script:
